@@ -1,0 +1,9 @@
+o-optimize
+Donata
+ext_and_data_structures/queue.c
+ext_and_data_structures/interface/queue.h
+.cproject
+.project
+*.o
+*~
+build

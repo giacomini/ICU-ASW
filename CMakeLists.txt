@@ -1,0 +1,68 @@
+cmake_minimum_required(VERSION 3.5 )
+
+project(ICU-ASW C)
+
+add_library(icuasw
+  init.c
+  tasks.c
+  DB_definition/db_type_def.c
+  DB_definition/PUS_3_DB_def.c
+  DB_definition/PUS_5_DB_def.c
+  DB_definition/PUS_6_DB_def.c
+  DB_definition/PUS_8_DB_def.c
+  DB_definition/PUS_8_TM_HK_def.c
+  ext_and_data_structures/external_functions.c
+  interr_isr/icu_interr.c
+  management_1553/BC_Configuration.c
+  management_1553/RT_Configuration.c
+  PUS_services/PUS_Service_17.c
+  PUS_services/PUS_Service_1.c
+  PUS_services/PUS_Service_3.c
+  PUS_services/PUS_Service_3_diag.c
+  PUS_services/PUS_Service_5.c
+  PUS_services/PUS_Service_6.c
+  PUS_services/PUS_Service_8_1.c
+  PUS_services/PUS_Service_8_1_DPU_BSW.c
+  PUS_services/PUS_Service_8_1_FDIR.c
+  PUS_services/PUS_Service_8_1_fwa_gwa.c
+  PUS_services/PUS_Service_8_1_heaters.c
+  PUS_services/PUS_Service_8_1_leds.c
+  PUS_services/PUS_Service_8_1_transitions.c
+  PUS_services/PUS_Service_8_1_watchdog.c
+  PUS_services/PUS_Service_8_CPU.c
+  PUS_services/PUS_Service_8_DCU.c
+  PUS_services/PUS_Service_8_DPU_config.c
+  PUS_services/PUS_Service_8_SCE.c
+  PUS_services/PUS_Service_9.c
+  telecommand/TC_function.c
+  telemetry/tm.c
+)
+target_include_directories(icuasw PUBLIC
+rtems-g/sparc-rtems4.8/ebb/lib/include
+DB_definition/interface
+ext_and_data_structures/interface
+interr_isr/interface
+management_1553/interface
+PUS_services/interface
+telecommand/interface
+telemetry/interface
+dsw_v2_2_5/include/common
+dsw_v2_2_5/include/edac
+dsw_v2_2_5/include/eeprom
+dsw_v2_2_5/include/file_manager
+dsw_v2_2_5/include/fpga_timers
+dsw_v2_2_5/include/interrupt_manager
+dsw_v2_2_5/include/led
+dsw_v2_2_5/include/mdpa_timers
+dsw_v2_2_5/include/milbus
+dsw_v2_2_5/include/milbus/milbus_bc
+dsw_v2_2_5/include/milbus/milbus_rt
+dsw_v2_2_5/include/obt
+dsw_v2_2_5/include/reset
+dsw_v2_2_5/include/asw_runtime_init
+dsw_v2_2_5/include/spi
+dsw_v2_2_5/include/watchdog
+dsw_v2_2_5/include/tm_acq_manager
+dsw_v2_2_5/include/heater
+dsw_v2_2_5/include/fwa_gwa_motors
+)
